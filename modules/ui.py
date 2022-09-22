@@ -884,12 +884,14 @@ def create_ui(txt2img, img2img, run_extras, run_pnginfo):
             _js='() => Notification.requestPermission()'
         )
 
+    lexica_iframe = gr.HTML("<iframe src='https://lexica.art/'></iframe>")
     interfaces = [
         (txt2img_interface, "txt2img", "txt2img"),
         (img2img_interface, "img2img", "img2img"),
         (extras_interface, "Extras", "extras"),
         (pnginfo_interface, "PNG Info", "pnginfo"),
         (settings_interface, "Settings", "settings"),
+        (lexica_iframe, "Find Inspiration,find_inspiration")
     ]
 
     with open(os.path.join(script_path, "style.css"), "r", encoding="utf8") as file:
